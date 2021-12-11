@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registar Cliente</title>
+    <link rel="stylesheet" href="">
+    <script src="JS/calculos.js"></script>
+    
+</head>
+<body>
+    <div id="App">
+        <h3 id="tit">Añadir Clientes a la Base de Datos</h3>
+
+        <div id="datos">
+            <h3></h3>
+            <div id="datos_e">
+                <h5 class="hor" id="tde">Datos del empleador</h5>
+                <label>ID: </label>
+                <input type="text" v-model="id"><br><br>
+
+                <label> Año Liquidado: </label>
+                <input type="text" v-model="yearliquidado"> <br><br>
+
+                <label>Nombre del Empleador: </label>
+                <input type="text" v-model="nombreempleador"> <br><br>
+
+                <label> NIT Empleador:</label>
+                <input type="text" v-model="nitempleador"><br><br>
+            </div>
+            <div id="datos_t">
+                <h5 class="hor" id="tdt">Datos del trabajor</h5>
+                <label> Nombre del Trabajador: </label>
+                <input type="text" v-model="nombretrabajador"><br><br>
+        
+                <label> Cédula del Trabajador:</label>
+                <input type="text" v-model="cctrabajador"><br><br>
+        
+                <label> Ultimo Cargo:</label>
+                <input type="text" v-model="ultimocargo"><br><br>
+            </div>
+        </div>
+
+        <div id="detalles">
+            <div id="contrato">
+                <h1 class="hor" id="dct">Detalles del Contrato</h1>
+                <h3>Contrato Término Indefinido</h3>
+                <label> Seleccione: </label><br>
+                <input type="radio" name="CTI" v-model="contratoterminoindf" value="true"> Sí <br>
+                <input type="radio" name="CTI" v-model="contratoterminoindf" value="false"> No <br><br>
+
+                <label> Meses del Contrato a Término Fijo</label>
+                <input type="number" id="mesescontrato" v-model="mesescontratoterminofijo"><br><br>
+
+                <label> Ultimo sueldo: </label>
+                <input type="text" id="sueldo" v-model="ultimosueldo"> <br><br>
+
+                <h3>Auxilio de Transporte</h3><br>
+                <input type="text" id="at" v-model = "auxiliotransporte"> <br><br>
+
+                <label>Fecha de ingreso: </label>
+                <input type="date" id="fechaIng" onchange="calcularFechas()" v-model="fechaingreso"><br><br>
+
+                <label>Fecha de retiro: </label>
+                <input type="date" id="fechaSal" onchange="calcularFechas()" v-model="fecharetiro"><br><br>
+
+                <h3>Despido injustificado</h3>
+                <label> Seleccione: </label><br>
+                <input type="radio" name="despido" v-model="despidoinjustificado" value="true"> Sí <br>
+                <input type="radio" name="despido" v-model="despidoinjustificado" value="false"> No <br><br>
+                
+            </div>
+
+            <div id="horario">
+                <h3 class="hor">Horario de Trabajo</h3>
+                <label> <h4> Hora de ingreso: </h4></label>
+                <input type="time" id="horaing" onchange="horasExtras()" v-model="horaingreso"><br><br>
+        
+                <label> <h4> Hora de Salida: </h4></label>
+                <input type="time" id="horasal" onchange="horasExtras()" v-model="horaretiro"><br><br>
+        
+                <label> Dias trabajados a la semana: </label>
+                <input type="number" onchange="detDominical()" id="dsemana" v-model="diassemana"><br><br>
+
+                <h3>¿Trabaja domingos?</h3>
+                <label> Seleccione: </label><br>
+                <input type="radio" id="domingosi" onclick="detDominical()" name="domingos" v-model="trabajadomingos" value="true"> Sí <br>
+                <input type="radio" id="domingono" onclick="detDominical()" name="domingos" v-model="trabajadomingos" value="false"> No <br><br>
+                <input type="hidden" id="diaslaborados" v-model="diaslaborados" value=0>
+                <input type="hidden" id="horasExtrasDiurnas" v-model="horasexdiurnas" value=0>
+                <input type="hidden" id="horasExtrasNocturnas" v-model="horasexnocturnas" value=0>
+                <input type="hidden" onchange="promHorasExtras()" id="diasensemana" value=0>
+                <input type="hidden" onchange="promDominicales()" id="domingosuma" value=0>
+                <input type="hidden" onchange="salarioBase()"id="valorhorasextras" value=0>
+                <input type="hidden" onchange="salarioBase()"id="valordominical" value =0>
+
+                
+
+            </div>
+
+        </div>
+        <div id="boton">
+            <input type="button" id="bt" value="Añadir Trabajador" v-on:click= "liquidarTrabajador">
+            
+        </div id="variablesOcultas">
+
+        
+
+        </div>
+    </div>
+    
+</body>
+
+<script src="JS/vue.js"></script>
+<script src="JS/App.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</html>

@@ -1,0 +1,124 @@
+*{
+    text-decoration: wavy;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: small;
+}
+
+body{
+    background-image: url(img/impuestos.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    backdrop-filter:blur(3px);
+}
+
+#App{
+    width: 1200px;
+    height: 1000px;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    top: 50%;
+    left:10%;
+    position: relative;
+    border-color: rgba(0, 0, 0, 0.521);
+    color: #fff;
+    border-radius: 2em;
+    box-sizing: border-box;
+    padding: 2em;
+    margin: 1em;
+}
+
+#tit{
+    color: white;
+    height: 4%;
+    font-size: x-large;
+    padding-left: 16em;
+}
+
+#datos{
+    background-color:transparent;
+    border-radius: 1em;
+    padding: em;
+    height: 35%;
+    width: 97%;
+}
+#datos_e{
+    background-color: rgba(94, 91, 91, 0.493);
+    width: 47%;
+    height: 90%;
+    border-radius: .7em;
+    padding: .5em;
+    float: left;
+    font-size: x-large;
+}
+.lbl_e{
+    border-radius: .6em;
+}
+#tde{
+    font-size: large;
+}
+#datos_t{
+    background-color:rgba(94, 91, 91, 0.493);
+    width: 47%;
+    height: 90%;
+    border-radius: .7em;
+    padding: .5em;
+    float: right;
+    font-size: x-large;
+}
+#tdt{
+    font-size: large;
+}
+
+#detalles{
+    background-color: rgba(94, 91, 91, 0.493);
+    width: 46.5%;
+    border-radius: .7em;
+    padding: .5em;
+
+}
+
+.mes{
+    width: 50px;
+    border-radius: .6em;
+}
+#contrato{
+    background-color: rgba(94, 91, 91, 0.493);
+    width: 47%;
+    height: 90%;
+    border-radius: .7em;
+    padding: .5em;
+    float: left;
+    
+}
+#horario{
+    position: relative;
+    background-color: rgba(94, 91, 91, 0.493);
+    border-radius: .7em;
+    float: right;
+    width: 47%;
+    height: 43.7%;
+    right: 2.5%;
+    top: -45%;
+    padding: .5em;
+    
+
+}   
+#bt{
+    margin: -20px -50px; 
+    position:absolute;
+    top:93%; 
+    left:46%;
+    font-size:medium;
+    padding: 0.3em;
+    background: rgb(117, 78, 78);
+    color: white;
+    border-radius: .4em;
+
+}
+.hor{ 
+    position:relative;
+    left:40%;
+    font-size: large;
+}

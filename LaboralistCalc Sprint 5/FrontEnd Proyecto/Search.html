@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style/Search.css">
+    <title>Buscar Clientes</title>
+</head>
+<body>
+    
+    <div id="Search">
+        <div>
+            <table id="tab" border="1">
+                <thead>
+                    <tr>
+                        <td class="tabla">ID</td>
+                        <td class="tabla">Año</td>
+                        <td class="tabla">Empleador</td>
+                        <td class="tabla">NIT</td>
+                        <td class="tabla">Trabajador</td>
+                        <td class="tabla">Cédula</td>
+                        <td class="tabla">Último Cargo</td>
+                        <td class="tabla">Término Indefinido</td>
+                        <td class="tabla">Meses del Contrato</td>
+                        <td class="tabla">Último Sueldo</td>
+                        <td class="tabla">Auxilio de Transporte</td>
+                        <td class="tabla">Fechas</td>
+                        <td class="tabla">Dias de trabajo</td>
+                        <td class="tabla">Horas</td>
+                        <td class="tabla">Trabaja Domingos</td>
+                        <td class="tabla">Despido Injustificado</td>
+                        <td class="tabla">Liquidación</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="cliente in datosbuscarnombreT">
+                        <td class="tabla">{{ cliente.id }}</td>
+                        <td class="tabla">{{ cliente.yearliquidado }}</td>
+                        <td class="tabla">{{ cliente.nombreempleador }}</td>
+                        <td class="tabla">{{ cliente.nitempleador}}</td>
+                        <td class="tabla">{{ cliente.nombretrabajador }}</td>
+                        <td class="tabla">{{ cliente.cctrabajador }}</td>
+                        <td class="tabla">{{ cliente.ultimocargo }}</td>
+                        <td class="tabla">{{ cliente.contratoterminoindf }}</td>
+                        <td class="tabla">{{ cliente.mesescontratoterminofijo }}</td>
+                        <td class="tabla">{{ cliente.ultimosueldo }}</td>
+                        <td class="tabla">{{ cliente.auxiliotransporte }}</td>
+                        <td class="tabla">{{ cliente.fechaingreso }} - {{ cliente.fecharetiro }}</td>
+                        <td class="tabla">{{ cliente.diassemana }}</td>
+                        <td class="tabla">{{ cliente.horaingreso }} - {{ cliente.horaretiro }}</td>
+                        <td class="tabla">{{ cliente.trabajadomingos }}</td>
+                        <td class="tabla">{{ cliente.despidoinjustificado }}</td>
+
+                    <!--Botón Liquidar    -->       
+                        <td class="tabla"><input type="radio" id="acc" name="liquid" v-on:click="SelectClient"></td>
+
+                    </tr>
+                    <div id="busca"><label for="">Nombre del Trabajador</label>
+                        <input class="d" type="text" v-model="nombrebuscarT">
+                        <input class="d" type="button" value="BUSCAR" v-on:click="BuscaNombreT"></div>
+                    <div id="Liq">  <input class="d"  type="button" value="Liquidar" id="liquid" v-on:click="Liquid"> </div> 
+        </div>
+        
+       
+
+    </div>
+    
+</body>
+    <script src="JS/vue.js"></script>
+    <script src="JS/Search.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</html>

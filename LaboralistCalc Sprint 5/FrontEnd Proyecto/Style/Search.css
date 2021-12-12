@@ -1,0 +1,48 @@
+*{
+    text-decoration: wavy;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+}
+body{
+    background-image: url(img/Buscar-Empleo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    backdrop-filter: blur(3px);
+}
+
+#Search{
+    background-color: rgba(41, 94, 100, 0.568);
+    height: 400px;
+    width: 1350px;
+    border-radius: .5em;
+    color: white;
+    backdrop-filter: blur(3px);
+    position: absolute;
+    top: 70%;
+}
+#busca{
+    position: relative;
+    background-color: transparent;
+    width: 450px;
+    height: 50px;
+    left: 30%;
+    top: 10%;
+    color: white;
+    font-weight: bolder;
+}
+#bb{
+    color: black;
+}
+.d{
+    border-radius: .7em;
+    color: black;
+}
+
+#Liq{
+    position: absolute;
+    left: 94%;
+    top: 30%;
+    border-radius: .7em;
+}
+  

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registar Cliente</title>
+    <link rel="stylesheet" href="Style/Style.css">
+</head>
+<body>
+    <div id="App" class="">
+        <h3 id="tit">Añadir Clientes a la Base de Datos</h3>
+
+        <div id="datos">
+            <h3></h3>
+            <div id="datos_e">
+                <h5 class="hor" id="tde">Datos del empleador</h5>
+                <label>ID: </label>
+                <input class="lbl_e" type="text" v-model="id"><br><br>
+
+                <label> Año Liquidado: </label>
+                <input class="lbl_e" type="text" v-model="yearliquidado"> <br><br>
+
+                <label>Nombre del Empleador: </label>
+                <input class="lbl_e" type="text" v-model="nombreempleador"> <br><br>
+
+                <label> NIT Empleador:</label>
+                <input class="lbl_e" type="text" v-model="nitempleador"><br><br>
+            </div>
+            <div id="datos_t">
+                <h5 class="hor" id="tdt">Datos del trabajor</h5>
+                <label> Nombre del Trabajador: </label>
+                <input class="lbl_e" type="text" v-model="nombretrabajador"><br><br>
+        
+                <label> Cédula del Trabajador:</label>
+                <input class="lbl_e" type="text" v-model="cctrabajador"><br><br>
+        
+                <label> Ultimo Cargo:</label>
+                <input class="lbl_e" type="text" v-model="ultimocargo"><br><br>
+            </div>
+        </div>
+            <div id="detalles" class="container">
+                
+                <h1 class="hor" id="dct">Detalles del Contrato</h1>
+                <h3>Contrato Término indefinido</h3>
+                <label> Seleccione: </label><br>
+
+                 <div class="radio">
+                     <label for="" class="radio-inline">
+                         <input v-model="contratoterminoindf" type="radio" v-bind:value="true"> No
+                        </label>
+
+                        <label for="" class="radio-inline">
+                            <input v-model="contratoterminoindf" type="radio" v-bind:value="false"> Sí
+                        </label>
+                 </div>
+
+                 <template v-if="contratoterminoindf">
+                     <div class="">
+                        <label> Meses del contrato: </label>
+                        <input class="mes" type="number" v-model="mesescontratoterminofijo"><br><br>
+                     </div>
+
+                 </template>
+
+                <label> Ultimo sueldo: </label>
+                <input class="lbl_e" type="text" v-model="ultimosueldo"> <br><br>
+
+                <h3>Auxilio de Transporte</h3><br>
+                <label> Seleccione: </label><br>
+                <input type="radio" v-model="auxiliotransporte" value="true">Sí <br>
+                <input type="radio" v-model="auxiliotransporte" value="false">No <br><br>
+
+                <label>Fecha de ingreso: </label>
+                <input class="lbl_e" type="date" v-model="fechaingreso"><br><br>
+
+                <label>Fecha de retiro: </label>
+                <input class="lbl_e" type="date" v-model="fecharetiro"><br><br>
+
+                <label> Dias por semana: </label>
+                <select class="lbl_e" v-model="diassemana"> Días de trabajo
+                    <option v-model="diassemana" value="1"> 1</option>
+                    <option v-model="diassemana" value="2"> 2</option>
+                    <option v-model="diassemana" value="3"> 3</option>
+                    <option v-model="diassemana" value="4"> 4</option>
+                    <option v-model="diassemana" value="5"> 5</option>
+                    <option v-model="diassemana" value="6"> 6</option>
+                    <option v-model="diassemana" value="7"> 7</option>
+                </select><br><br>
+            </div>
+
+            <div id="horario">
+                <h3 class="hor">Horario de Trabajo</h3>
+                <label> <h4> Hora de ingreso: </h4></label>
+                <input class="lbl_e" type="time" v-model="horaingreso"><br><br>
+        
+                <label> <h4> Hora de Salida: </h4></label>
+                <input class="lbl_e" type="time" v-model="horaretiro"><br>
+        
+                <h3>Trabaja Domingos</h3>
+                <label> Seleccione: </label><br>
+                <input type="radio" name="domingos" v-model="trabajadomingos" value="true"> Sí <br>
+                <input type="radio" name="domingos" v-model="trabajadomingos" value="false" > No <br><br>
+        
+                <h3>Despido injustificado</h3>
+                <label> Seleccione: </label><br>
+                <input type="radio" name="despido" v-model="despidoinjustificado" value="true"> Sí <br>
+                <input type="radio" name="despido" v-model="despidoinjustificado" value="false"> No <br><br>
+
+            </div>
+
+    
+        <div id="boton">
+            <input type="button" id="bt" value="Añadir Trabajador" v-on:click= "AgregarTrabajador">
+        </div>
+    </div>
+    
+</body>
+<script src="JS/vue.js"></script>
+<script src="JS/App.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</html>

@@ -1,0 +1,50 @@
+*{
+    text-decoration: wavy;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: small;
+}
+body{
+    background-image: url(img/Horario.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    backdrop-filter: blur(3px);
+}
+#App1{
+    height: 750px;
+    background-color: transparent;
+    border-radius: 1em;
+    backdrop-filter: blur;
+}
+#button{
+    position: relative;
+    top: 1%;
+    left: 2%;
+
+}
+#acc{
+    position: relative;
+    left: 40%;
+}
+
+#liquid{
+    position: relative;
+    left: 94.4%;
+    border-radius: .5em;
+}
+#Table{
+    background-color: rgba(57, 57, 212, 0.699);
+    backdrop-filter: blur(5px);
+    padding: .5em;
+    position: relative;
+    left: 2%;
+    width: 92.5%;
+    font-size: x-large;
+    border-radius: .6em;
+    color: white;
+}
+
+.tabla{
+    font-size: 1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
